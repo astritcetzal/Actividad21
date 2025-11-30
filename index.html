@@ -12,8 +12,8 @@
 
         <!-- Botones de navegación -->
         <div class="nav-buttons">
-            <button onclick="mostrarSeccion('encriptar')" id="btnEncriptarNav" class="activo">ENCRIPTAR</button>
-            <button onclick="mostrarSeccion('desencriptar')" id="btnDesencriptarNav">DESENCRIPTAR</button>
+            <button class="btn-nav" onclick="mostrarSeccion('encriptar')" id="btnEncriptarNav">ENCRIPTAR</button>
+            <button class="btn-nav" onclick="mostrarSeccion('desencriptar')" id="btnDesencriptarNav">DESENCRIPTAR</button>
         </div>
 
         <p class="subtitle">Tecnológico de Software - Fundamentos de Álgebra - Astrit Airan Cetzal Cetzal - Jorge Javier Pedrozo Romero - Grupo 1C</p>
@@ -42,7 +42,7 @@
                 </div>
             </div>
 
-            <button id="encriptar">Encriptar</button>
+            <button id="encriptar" class="btn-encriptar">Encriptar</button>
 
             <div class="section">
                 <h3>Resultado encriptado</h3>
@@ -52,11 +52,11 @@
 
         <!-- Sección DESENCRIPTAR -->
         <div id="seccionDesencriptar" style="display:none;">
+            <button id="desencriptar" class="btn-desencriptar">Desencriptar</button>
             <div class="section">
                 <h3>Resultado desencriptado</h3>
                 <div id="resultadoDesencriptado" class="resultado-box resultado-desencriptado"></div>
             </div>
-            <button id="desencriptar">Desencriptar</button>
         </div>
     </div>
 
