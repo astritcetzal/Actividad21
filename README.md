@@ -1,10 +1,10 @@
 # 🛡️ Implementación del Algoritmo de Cifrado Hill
 
-Este trabajo contiene una implementacion funcional del **Cifrado Hill**, un algoritmo de cifrado por bloques que utiliza algebra lineal para transformar texto en texto cifrado y viceversa. Este repositorio esta diseñado con el fin de demostrar la comprension del algoritmo de criptografico y a su vez aplicando tecnologias como HTML, Java Script y CSS.
+Este trabajo contiene una implementacion funcional del **Cifrado Hill**, un algoritmo de cifrado por bloques que utiliza álgebra lineal para transformar texto en texto cifrado y viceversa. Este repositorio esta diseñado con el fin de demostrar la comprension del algoritmo de criptografico y a su vez aplicando tecnologias como HTML, Java Script y CSS.
 
 ## 👨‍💻 Información del Estudiante
 
-- **Nombre:** Astrit Airan Cetzal
+- **Nombre:** Astrit Airan Cetzal Cetzal
 - **Matrícula:** SW2509028
 - **Grupo:** C
 - **Materia:** Fundamentos de álgebra
@@ -25,33 +25,31 @@ El cifrado Hill sustituye bloques de *m* letras por otros *m* bloques del mismo,
 
 ## 2. Fundamento Matemático
 
-### - Alfabeto y el módulo
+### Alfabeto y el módulo
 - Se utiliza el afabeto en español contando solo 26 letras.
 - Cada letra se mapea a un número de 0 a 25.
 - Todas las operaciones se realizan módulo 26 por el tamaño del alfabeto.
 
-### - Manejo de la clave (matriz *K*)
-La matriz K de m x m es la clave de su funcionamiento. Para que la clave sea válida y el mensaje se pueda desencriptar, el determinante de la matriz no debe ser 0 y debe ser coprimo con el modulo ( en este caso 26). Es decir mcd(det(K),26)=1. Lo cual asegura que el determinante tenga un inverso multiplicativo módulo 26.
+### Manejo de la clave (matriz *K*)
+La matriz K de *m x m* es la clave de su funcionamiento. Para que la clave sea válida y el mensaje se pueda desencriptar, el determinante de la matriz no debe ser 0 y debe ser coprimo con el modulo ( en este caso 26). Es decir mcd(det(K),26)=1. Lo cual asegura que el determinante tenga un inverso multiplicativo módulo 26.
 
-### - Encriptacion
+### Encriptacion
 El cifrado se realiza multiplicando los vectores numéricos del texto plano(P) por la matriz clave (K), y tomando el resultado del módulo 26.
 
 ```
 C= (K * P) (mod 26)
-
 ```
 Donde *C* es el vector numerico del texto cifrado.
 
-### - Desencriptacion (matriz inversa)
-La desencriptación require el uso de la matriz inversa modular de la clave, denotada como K^-1.
+### Desencriptacion (matriz inversa)
+La desencriptación require el uso de la matriz inversa modular de la clave, denotada como (K)^{-1}.
 ```
-P= (K^-1 * C) (mod 26)
-
+P= ((K)^{-1} * C) (mod 26)
 ```  
 La matriz inversa se calcula mediante la formula: 
 
 ```
-K^-1 = det (K)^-1 * Adjunta(K) (mod 26)
+K^-1 = det (K)^{-1} * Adjunta(K) (mod 26)
 ```
 Donde $\det(K)^{-1}$ es el inverso multiplicativo del determinante módulo 26. Este inverso existe si y solo si $\text{mcd}(\det(K), 26) = 1$.
 
@@ -62,7 +60,8 @@ Donde $\det(K)^{-1}$ es el inverso multiplicativo del determinante módulo 26. E
 
 1. Ingreso de Mensaje: Escribe el mensaje que deseas cifrar.
 
-2. Operación: Presiona el botón "Encriptar" que se encuentra en la parte inferior despues para descifrar debes irte al boton "Desencriptar" que se encuentra en la parte supeior y luego presionar "Desencriptar" que se encuentra en la parte inferior izquierda.
+2. Encriptar: Presiona el botón "Encriptar" que se encuentra en la parte inferior,
+3. Desifrar: Para descifrar debes irte al boton "Desencriptar" que se encuentra en la parte superior y luego presionar "Desencriptar" que se encuentra en la parte inferior izquierda.
 
 3. Validación de Clave: El sistema validará automáticamente si el determinante de la matriz clave es coprimo con 26. Si no lo es, mostrará un mensaje de error indicando que la clave no es invertible.
 
@@ -71,8 +70,8 @@ Donde $\det(K)^{-1}$ es el inverso multiplicativo del determinante módulo 26. E
 - Esquema de Colores: Se utiliza una paleta de colores moderna
 - Tipografía: Se emplea una fuente clara y monoespaciada para el texto cifrado y los números de la matriz, mejorando la legibilidad.
 - Validación Visual: Los mensajes de error y los resultados (texto cifrado/descifrado) se presentan en cajas de alerta claras y con códigos de color para una retroalimentación inmediata.
----
 
+---
 
 ## 🚀 Instalación y Uso
 
